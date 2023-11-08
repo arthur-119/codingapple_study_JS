@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3강 function</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <button onclick="알림창퇴장()" class="alert-close">X</button>
+        <div style="clear: both;"></div>
+    </div>
+    <button onclick="알림창등장()">알림창 소환!</button>
+
+
+    <script>
+
+        function 알림창등장() {
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        function 알림창퇴장() {
+            document.getElementById('alert').style.display = 'none';
+        }
+        
+
+    </script>
+</body>
+</html>
