@@ -1,0 +1,15 @@
+.alert-box {
+    background-color: skyblue;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.alert-box p {
+    display: inline;
+}
+
+.alert-close {
+    float: right;
+}

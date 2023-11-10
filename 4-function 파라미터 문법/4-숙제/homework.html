@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4강 function 파라미터 문법</title>
+    <link rel="stylesheet" href="homework.css">
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <p id="title">알림창임</p>
+        <button onclick="알림창조작('none')" class="alert-close">X</button>
+        <div style="clear: both;"></div>
+    </div>
+
+    <hr>
+    
+    <button onclick="알림창조작('block'), 알림창내용('아이디내놔!')">알림창 소환 첫째!</button>
+    <button onclick="알림창조작('block'), 알림창내용('비번은 어디감?')">알림창 소환 둘째!</button>
+    
+
+    <script>
+
+        function 알림창조작(display) {
+            document.getElementById('alert').style.display = display;
+        }
+
+        function 알림창내용(content) {
+            document.getElementById('title').innerHTML = content;
+        }
+
+        
+
+    </script>
+</body>
+</html>
