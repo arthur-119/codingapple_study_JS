@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5강 자바스크립트 이벤트리스너</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
+    <div class="alert-box" id="alert">
+        <p id="title">알림창임</p>
+        <button id="close" class="alert-close">X</button>
+        <div style="clear: both;"></div>
+    </div>
+
+    <hr>
+    
+    <button onclick="알림창조작('block', '아이디내놔!')">알림창 소환 첫째!</button>
+    <button onclick="알림창조작('block', '비번은 어디감?')">알림창 소환 둘째!</button>
+    
+
+    <script>
+
+        function 알림창조작(display, content) {
+            document.getElementById('alert').style.display = display;
+            document.getElementById('title').innerHTML = content;
+        }
+
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('alert').style.display = 'none';
+        })       
+
+    </script>
 </body>
 </html>
