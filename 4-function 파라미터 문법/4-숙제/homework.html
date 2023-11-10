@@ -16,19 +16,20 @@
 
     <hr>
     
-    <button onclick="알림창조작('block'), 알림창내용('아이디내놔!')">알림창 소환 첫째!</button>
-    <button onclick="알림창조작('block'), 알림창내용('비번은 어디감?')">알림창 소환 둘째!</button>
+    <button onclick="알림창조작('block', '아이디내놔!')">알림창 소환 첫째!</button>
+    <button onclick="알림창조작('block', '비번은 어디감?')">알림창 소환 둘째!</button>
     
 
     <script>
 
-        function 알림창조작(display) {
+        function 알림창조작(display, content) {
             document.getElementById('alert').style.display = display;
-        }
-
-        function 알림창내용(content) {
             document.getElementById('title').innerHTML = content;
         }
+
+        // function 알림창내용(content) {
+        //     document.getElementById('title').innerHTML = content;
+        // }
 
         
 
