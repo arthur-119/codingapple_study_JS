@@ -41,6 +41,13 @@
         $('#close').on('click', function() {
             $('.black-bg').removeClass('show-modal')
         })
+
+        // esc 눌렀을때 모달창 닫기 궁금해서 구글 찾아서 해봄
+        $(document).keydown(function() {
+            if ( event.keyCode == 27 || event.which == 27 ) {
+                $('.black-bg').removeClass('show-modal')
+            }
+        })
     </script>
 
 </body>
