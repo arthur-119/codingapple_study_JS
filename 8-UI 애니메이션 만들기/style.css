@@ -30,6 +30,6 @@
 }
 
 .show {
-    max-height: 100vh;
+    max-height: 20vh;
     overflow: hidden;
 }
