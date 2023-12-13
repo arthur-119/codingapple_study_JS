@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9강</title>
+    <!-- 부트스트랩 설치 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>Login</h4>
+            <form action="success.html">
+                <div class="my-3">
+                    <input id="id" type="text" class="form-control">
+                </div>
+                <div class="my-3">
+                    <input id="password" type="password" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button id="submit" type="submit" class="btn btn-primary">전송</button>
+                    <button type="button" class="btn btn-danger" id="close">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand">Navbar</span>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <button id="login-modal">모달창 등장</button>
+
+
+
+    <!-- 부트스트랩 설치 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery 설치 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('.navbar-toggler').on('click', function () {
+            $('.list-group').toggleClass('show')
+        })
+
+
+        $('#login-modal').on('click', function () {
+            $('.black-bg').addClass('show-modal')
+        })
+
+        $('#close').on('click', function () {
+            $('.black-bg').removeClass('show-modal')
+        })
+
+        // esc 눌렀을때 모달창 닫기 궁금해서 구글 찾아서 해봄
+        $(document).keydown(function () {
+            if (event.keyCode == 27 || event.which == 27) {
+                $('.black-bg').removeClass('show-modal')
+            }
+        })
+
+        // input에 입력한 값이 공백일때 알림
+        document.querySelector('#submit').addEventListener('click', function (e) {
+            if (document.querySelector('#id').value == '') {
+                e.preventDefault()
+                alert('아이디를 입력해라')
+            }
+        })
+
+        document.querySelector('#submit').addEventListener('click', function (e) {
+            if (document.querySelector('#password').value == '') {
+                e.preventDefault()
+                alert('비밀번호를 입력해라')
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
