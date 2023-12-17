@@ -103,10 +103,10 @@
             if ($('#id').val() == '') {
                 e.preventDefault();
                 alert('아이디 입력해라');
-            } if ($('#password').val() == '') {
+            } else if ($('#password').val() == '') {
                 e.preventDefault();
                 alert('비밀번호 입력해라');
-            } if ($('#password').val().length < 6){
+            } else if ($('#password').val().length < 6){
                 e.preventDefault();
                 alert('비밀번호는 6글자 이상이어야 한다')
             }   
