@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 10%;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.white-bg h4 {
+    margin-top: 12px;
+}
+
+.show-modal {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.list-group {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.show {
+    max-height: 206px;
+    overflow: hidden;
+}
+
+.light-btn {
+    /* position: absolute; */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: rgb(77, 76, 76);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+}
+
+.dark-btn {
+    color: rgb(77, 76, 76);
+    /* background: white; */
+    background-color: white;
+}
