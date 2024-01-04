@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="alert alert-danger">
+        <span id="sec">5</span>초 이내 구매시 사은품 증정
+    </div>
+
+    <script>
+
+        var sec = 5;
+
+        var 타이머 = setInterval(function() {
+            sec --;
+            console.log(sec)
+            if (sec >= 0) {
+                document.querySelector('#sec').innerHTML = sec;
+            }
+
+            if (sec == 0) {
+            console.log('0초 됨');
+            clearTimeout(타이머);
+            // document.querySelector('.alert').style.display = 'none'
+        }
+        }, 1000)
+
+        
+
+        // setTimeout(function() {
+        //     console.log('작동하나?')
+        //     document.getElementsByClassName('alert')[0].style.display = 'none';
+        //     $('.alert').hide(); // jQuery 에서는 이렇게 .hide()함수는 display: none; 준거랑 비슷하게 작동함
+        // }, 5000)
+
+        // setInterval(function () {
+        //     console.log('안녕')
+        // }, 1000);
+
+    </script>
+
+</body>
+</html>
