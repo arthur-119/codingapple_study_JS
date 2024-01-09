@@ -94,4 +94,14 @@ document.getElementById('darkmode').addEventListener('click', function(e) {
 })
 
 // 캐러셀 (이미지 슬라이드)
+$('.slide-1').on('click', function() {
+    $('.slide-container').css('transform', 'translateX(0)');
+});
 
+$('.slide-2').on('click', function() {
+    $('.slide-container').css('transform', 'translateX(-100vw)');
+});
+
+$('.slide-3').on('click', function() {
+    $('.slide-container').css('transform', 'translateX(-200vw)');
+});

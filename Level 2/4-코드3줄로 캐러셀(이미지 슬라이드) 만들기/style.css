@@ -60,10 +60,28 @@
     border: none;
     border-radius: 50px;
     color: white;
+    z-index: 999;
 }
 
 .dark-btn {
     color: rgb(77, 76, 76);
     /* background: white; */
     background-color: white;
+    z-index: 999;
+}
+
+/* 캐러셀 이미지 슬라이드 */
+
+.slide-container {
+    width: 300vw;
+    transition: all 1s;
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
 }
