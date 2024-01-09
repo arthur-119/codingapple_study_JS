@@ -93,5 +93,5 @@ document.getElementById('darkmode').addEventListener('click', function(e) {
     }
 })
 
-//
+// 캐러셀 (이미지 슬라이드)
 
