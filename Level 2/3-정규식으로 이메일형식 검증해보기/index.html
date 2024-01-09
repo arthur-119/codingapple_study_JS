@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>13강</title>
+    <title>lv2 3강</title>
     <!-- 부트스트랩 설치 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -19,7 +19,7 @@
             <h4>Login</h4>
             <form action="success.html">
                 <div class="my-3">
-                    <input id="id" type="text" class="form-control">
+                    <input id="email" type="text" class="form-control">
                 </div>
                 <div class="my-3">
                     <input id="password" type="password" class="form-control">
@@ -90,26 +90,62 @@
         })
 
         // input에 입력한 값이 공백일때 알림
-        document.querySelector('#submit').addEventListener('click', function (e) {
-            if (document.querySelector('#id').value == '') {
+        // document.querySelector('#submit').addEventListener('click', function (e) {
+        //     if (document.querySelector('#email').value == '') {
+        //         e.preventDefault();
+        //         alert('이메일를 입력해라');
+        //     } if (document.querySelector('#password').value == '') {
+        //         e.preventDefault();
+        //         alert('비밀번호를 입력해라');
+        //     } if (document.querySelector('#password').value.length < 6) {
+        //         e.preventDefault();
+        //         alert('비밀번호는 6글자 이상');
+        //     } 
+        // })
+
+        // jQuery로 공백알림
+        $('form').on('submit', function (e) {
+            var email = document.getElementById('email').value
+            var password = document.getElementById('password').value
+
+            if (email == '') {
                 e.preventDefault();
-                alert('아이디를 입력해라');
-            } else if (document.querySelector('#password').value == '') {
+                alert('이메일 입력해라');
+            } else if ( /\S+@\S+\.\S+/.test(email) == false ) {
                 e.preventDefault();
-                alert('비밀번호를 입력해라');
-            } if (document.querySelector('#password').value.length < 6) {
+                alert('이메일 형식이 맞지 않습니다')
+            } else if (password == '') {
                 e.preventDefault();
-                alert('비밀번호는 6글자 이상');
+                alert('비밀번호 입력해라');
+                console.log('비밀번호 입력해라')
+            } else if (password.length < 6){
+                e.preventDefault();
+                alert('비밀번호는 6글자 이상이어야 한다')
+                console.log('비밀번호 6글자 이상')
+            } else if ( /[A-Z]/.test(password) == false ) {
+                e.preventDefault();
+                alert('비밀번호에는 대문자가 1개 이상 들어가야 합니다')
             }
         })
 
+        // $('#submit').on('click', function (e) {
+
+        //     var 입력한값 = document.getElementById('email').value;
+        //     if (/\S+@\S+\.\S+/.test(입력한값) == false) {
+        //         e.preventDefault();
+        //         alert('이메일형식아님')
+                
+        //     }
+
+        // });
+
         // input, change 연습
-        document.getElementById('id').addEventListener('input', function () {
+        document.getElementById('email').addEventListener('input', function () {
             console.log('안녕')
         });
 
 
-        document.getElementById('id').addEventListener('change', function () {
+        document.getElementById('email').addEventListener('change', function () {
             console.log('안녕')
         });
 
@@ -136,19 +172,7 @@
         } //출력안됨
 
 
-        // jQuery로 공백알림
-        $('#submit').on('click', function (e) {
-            if ($('#id').val() == '') {
-                e.preventDefault();
-                alert('아이디 입력해라');
-            } else if ($('#password').val() == '') {
-                e.preventDefault();
-                alert('비밀번호 입력해라');
-            } else if ($('#password').val().length < 6){
-                e.preventDefault();
-                alert('비밀번호는 6글자 이상이어야 한다')
-            }   
-        })
+        
 
         let count = 0;
 
@@ -170,6 +194,8 @@
                 document.getElementById('darkmode').innerHTML = "🌙다크 모드로 보기";
             }
         })
+
+        
 
     </script>
 
