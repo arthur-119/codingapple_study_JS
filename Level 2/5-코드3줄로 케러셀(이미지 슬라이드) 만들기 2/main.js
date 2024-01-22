@@ -105,3 +105,45 @@ $('.slide-2').on('click', function() {
 $('.slide-3').on('click', function() {
     $('.slide-container').css('transform', 'translateX(-200vw)');
 });
+
+// 캐러셀 이전/다음버튼 if문 사용
+
+// var now = 1
+
+// $('.next').on('click', function() {
+//     if ( now == 1 ) {
+//         $('.slide-container').css('transform', 'translateX(-100vw)');
+//         now++
+//     } else if ( now == 2 ) {
+//         $('.slide-container').css('transform', 'translateX(-200vw)');
+//         now++
+//     }
+// })
+
+// $('.before').on('click', function() {
+//     if ( now == 2 ) {
+//         $('.slide-container').css('transform', 'translateX(0vw)');
+//         now--
+//     } else if ( now == 3 ) {
+//         $('.slide-container').css('transform', 'translateX(-100vw)');
+//         now--
+//     }
+// })
+
+//캐러셀 코드 줄인 버전 (코딩할때 이렇게 해야 편하다)
+
+var now = 1 < 3;
+
+$('.next').on('click', function() {
+    $('.slide-container').css('transform', `translateX(-${now}00vw)`);
+    now++;
+})
+
+$('.before').on('click', function() {
+    $('.slide-container').css('transform', `translateX(-${now-2}00vw)`);
+    now--;
+})
+
+
+
+

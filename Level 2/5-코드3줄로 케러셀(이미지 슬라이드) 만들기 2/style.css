@@ -74,6 +74,7 @@
 
 .slide-container {
     width: 300vw;
+    max-width: 300vw;
     transition: all 1s;
 }
 
@@ -84,4 +85,14 @@
 
 .slide-box img {
     width: 100%;
+}
+
+.slide-btn {
+    text-align: center;
+}
+
+.slide {
+    padding: 20px;
+    font-size: 20px;
+    margin-left: 60px;
 }
