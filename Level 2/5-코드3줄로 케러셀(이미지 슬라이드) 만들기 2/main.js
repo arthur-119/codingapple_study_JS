@@ -94,16 +94,23 @@ document.getElementById('darkmode').addEventListener('click', function(e) {
 })
 
 // 캐러셀 (이미지 슬라이드)
+// 캐러셀 이전/다음 버튼을 위한 변수
+var now = 1
+
+
 $('.slide-1').on('click', function() {
     $('.slide-container').css('transform', 'translateX(0)');
+    now = 1;
 });
 
 $('.slide-2').on('click', function() {
     $('.slide-container').css('transform', 'translateX(-100vw)');
+    now = 2;
 });
 
 $('.slide-3').on('click', function() {
     $('.slide-container').css('transform', 'translateX(-200vw)');
+    now = 3;
 });
 
 // 캐러셀 이전/다음버튼 if문 사용
@@ -132,11 +139,17 @@ $('.slide-3').on('click', function() {
 
 //캐러셀 코드 줄인 버전 (코딩할때 이렇게 해야 편하다)
 
-var now = 1 < 3;
+// var now = 1;
+var slideCount = $('.slide-container img').length
+// console.log(slideCount)
 
 $('.next').on('click', function() {
-    $('.slide-container').css('transform', `translateX(-${now}00vw)`);
-    now++;
+    if ( now < slideCount ) {
+        $('.slide-container').css('transform', `translateX(-${now}00vw)`);
+        now++;
+        console.log(now)
+    }
+    
 })
 
 $('.before').on('click', function() {
