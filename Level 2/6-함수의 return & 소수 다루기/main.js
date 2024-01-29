@@ -158,5 +158,54 @@ $('.before').on('click', function() {
 })
 
 
+// return
 
+function 함수() {
+    return 1+3;
+}
 
+console.log(함수())
+
+// return  부가세 계산기 만들기
+
+function vat(a) {
+    return a * 0.1;
+}
+
+console.log(vat(60000));
+console.log(vat(50000));
+console.log(vat(80000));
+
+// 소수 연산
+
+console.log(1.1 + 0.3)
+
+// 소수점 반올림
+
+console.log( (1.1+0.3).toFixed(1) );
+
+// '숫자'를 숫자로 바꾸기
+
+console.log(parseFloat('1.3'))
+console.log(parseInt('1.3'))
+
+// Q1. 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수를 만들어라
+
+function ms(a, b) {
+    return (a * 60 + b) * 1000;
+}
+
+console.log(ms(2,10))
+
+// Q2. 가격을 파라미터로 입력하면 10% 할인된 가격을 뱉는 함수를 만들어라
+
+function dc(a, b) {
+    var result = a * 0.9
+    if ( b == true ) {
+        result = result - 1.5
+    }
+
+    return parseFloat(result.toFixed(2));
+}
+
+console.log(dc(10.3, true))
