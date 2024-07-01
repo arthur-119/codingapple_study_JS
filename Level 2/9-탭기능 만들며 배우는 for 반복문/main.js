@@ -212,30 +212,72 @@ function dc(a, b) {
 
 // 스크롤 이벤트
 
-window.addEventListener('scroll', function () {
-    console.log(window.scrollY)
+// window.addEventListener('scroll', function () {
+//     console.log(window.scrollY)
 
-    if (window.scrollY >= 10) {
-        // console.log('100100100100')
-        document.getElementsByClassName('navbar-brand')[0].style.fontSize = '1.5rem'
+//     if (window.scrollY >= 10) {
+//         // console.log('100100100100')
+//         document.getElementsByClassName('navbar-brand')[0].style.fontSize = '1.5rem'
 
+//     }
+
+//     if (this.window.scrollY <= 10) {
+//         this.document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px'
+//     }
+// })
+
+// $('.lorem').on('scroll', function () {
+//     var 스크롤양 = document.querySelector('.lorem').scrollTop;
+//     var 실제높이 = document.querySelector('.lorem').scrollHeight;
+//     var 박화높 = document.querySelector('.lorem').clientHeight;
+//     console.log(스크롤양, 실제높이, 박화높);
+
+
+//     if (스크롤양 + 박화높 == 실제높이) {
+//         alert("다내렸다")
+//     }
+// });
+
+// 스크롤 이벤트 숙제 해설(?)
+// 숙제 1. 페이지 스크롤바 100px 내리면 로고 폰트 사이즈 작게
+$(window).on('scroll', function() {
+    if (window.scrollY > 100) {
+        $('.navbar-brand').css('font-size', '20px');
     }
 
-    if (this.window.scrollY <= 10) {
-        this.document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px'
-    }
-})
-
-$('.lorem').on('scroll', function () {
-    var 스크롤양 = document.querySelector('.lorem').scrollTop;
-    var 실제높이 = document.querySelector('.lorem').scrollHeight;
-    var 박화높 = document.querySelector('.lorem').clientHeight;
-    console.log(스크롤양, 실제높이, 박화높);
-
-
-    if (스크롤양 + 박화높 == 실제높이) {
-        alert("다내렸다")
+    if (window.scrollY < 100) {
+        $('.navbar-brand').css('font-size', '30px');
     }
 });
 
+// 숙제 2. 회원약관 박스 거의 끝까지 스크롤 하면 alert띄우기
+$('.lorem').on('scroll', function() {
+    var 스크롤양 = document.querySelector('.lorem').scrollTop;
+    var 실제높이 = document.querySelector('.lorem').scrollHeight;
+    var 높이 = document.querySelector('.lorem').clientHeight;
 
+    if (스크롤양 + 높이 > 실제높이 - 10) {
+        alert('다읽음.')
+    }
+});
+
+//스크롤 다룰 때 주의점
+
+//스크롤 이벤트 리스너 안의 코드는 1초에 60번 이상 실행됨
+// 많이 쓰면 성능저하 생기니까 스크롤바 1개마다 1개만 사용.
+
+//스크롤이벤트리스너 안의 코드는 1초에 여러번 실행되다 보니 바닥체크하는 코드도 여러번 실행될 수 있음.
+//숙제 2에서 alert가 2번 뜨고 그럴 수 있음
+//그걸 방지하고 싶으면 구글에 검색 ㄱㄱ 변수같은거 사용하면 될것임.
+
+
+// 현재 페이지를 끝까지 스크롤했는지 체크하려면
+
+document.querySelector('html').scrollTop;  //현재 웹페이지 스크롤양
+document.querySelector('html').scrollHeight; //현재 웹페이지 실제높이
+document.querySelector('html').clientHeight; //현재 웹페이지 보이는 높이임
+//이거 쓰면 됨
+
+//(주의)
+//1. 웹페이지 scrollHeight 구할 땐 브라우저마다 아주 약간의 오차가있을 수 있어서 테스트해보는게 좋습니다.
+//2. 웹페이지 scrollHeight 구하는 코드는 페이지 로드가 완료되고나서 실행해야 정확합니다. 그래서 <body> 끝나기 전에 적는게 좋습니다.

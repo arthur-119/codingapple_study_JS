@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv3 5강</title>
+    <!-- 부트스트랩 설치 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="select.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <ul class="list">
+            <li class="tab-button" data-id="0">Products</li>
+            <li class="tab-button" data-id="1">Information</li>
+            <li class="tab-button" data-id="2">Shipping</li>
+        </ul>
+        <div class="tab-content">
+            <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content">
+            <p>스펙설명입니다. Information</p>
+        </div>
+        <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="card p-3">
+            <span class="car-name">상품명</span>
+            <span class="car-price">가격</span>
+        </div>
+    </div>
+
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option>------선택------</option>
+            <option>모자</option>
+            <option>셔츠</option>
+            <option>바지</option>
+        </select>
+
+        <select class="form-select mt-2 form-hide">
+            <option>95</option>
+            <option>100</option>
+        </select>
+    </form>
+    <!-- <select>는 <input>이랑 똑같은데
+        사용자가 고를 수 있는 선택지를 드랍다운 메뉴로 제공하는 <input>이다
+        선택지는 <option으로 넣으면 된다>
+        <select> 태그도 선택시 input, change 이벤트 발생
+        <select> 태그도 .value 유저가 입력한 값을 가져올 수 있음.
+    -->
+
+    <div id="test">
+
+    </div>
+
+
+    <!-- 부트스트랩 설치 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery 설치 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- 자바스크립트 파일 분리 -->
+    <script src="detail.js"></script>
+    <script src="Array_Object.js"></script>
+    <script src="select.js"></script>
+
+</body>
+
+</html>

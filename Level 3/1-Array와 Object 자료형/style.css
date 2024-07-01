@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    height: 10000px; /* 스크롤 이벤트 테스트 */
+}
+
+main {
+    padding-top: 71px;
+    /* background-color: black; */
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 7;
+    padding: 15%;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+}
+
+.white-bg h4 {
+    margin-top: 12px;
+}
+
+.show-modal {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.list-group {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.show {
+    max-height: 206px;
+    overflow: hidden;
+}
+
+.light-btn {
+    /* position: absolute; */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: rgb(77, 76, 76);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    z-index: 999;
+}
+
+.dark-btn {
+    color: rgb(77, 76, 76);
+    /* background: white; */
+    background-color: white;
+    z-index: 999;
+}
+
+/* 캐러셀 이미지 슬라이드 */
+
+.slide-container {
+    width: 300vw;
+    max-width: 300vw;
+    transition: all 1s;
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.slide-btn {
+    text-align: center;
+}
+
+.slide {
+    padding: 20px;
+    font-size: 20px;
+    margin-left: 60px;
+}

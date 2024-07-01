@@ -212,30 +212,124 @@ function dc(a, b) {
 
 // 스크롤 이벤트
 
-window.addEventListener('scroll', function () {
-    console.log(window.scrollY)
+// window.addEventListener('scroll', function () {
+//     console.log(window.scrollY)
 
-    if (window.scrollY >= 10) {
-        // console.log('100100100100')
-        document.getElementsByClassName('navbar-brand')[0].style.fontSize = '1.5rem'
+//     if (window.scrollY >= 10) {
+//         // console.log('100100100100')
+//         document.getElementsByClassName('navbar-brand')[0].style.fontSize = '1.5rem'
 
+//     }
+
+//     if (this.window.scrollY <= 10) {
+//         this.document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px'
+//     }
+// })
+
+// $('.lorem').on('scroll', function () {
+//     var 스크롤양 = document.querySelector('.lorem').scrollTop;
+//     var 실제높이 = document.querySelector('.lorem').scrollHeight;
+//     var 박화높 = document.querySelector('.lorem').clientHeight;
+//     console.log(스크롤양, 실제높이, 박화높);
+
+
+//     if (스크롤양 + 박화높 == 실제높이) {
+//         alert("다내렸다")
+//     }
+// });
+
+// 스크롤 이벤트 숙제 해설(?)
+// 숙제 1. 페이지 스크롤바 100px 내리면 로고 폰트 사이즈 작게
+$(window).on('scroll', function() {
+    if (window.scrollY > 100) {
+        $('.navbar-brand').css('font-size', '20px');
     }
 
-    if (this.window.scrollY <= 10) {
-        this.document.getElementsByClassName('navbar-brand')[0].style.fontSize = '30px'
-    }
-})
-
-$('.lorem').on('scroll', function () {
-    var 스크롤양 = document.querySelector('.lorem').scrollTop;
-    var 실제높이 = document.querySelector('.lorem').scrollHeight;
-    var 박화높 = document.querySelector('.lorem').clientHeight;
-    console.log(스크롤양, 실제높이, 박화높);
-
-
-    if (스크롤양 + 박화높 == 실제높이) {
-        alert("다내렸다")
+    if (window.scrollY < 100) {
+        $('.navbar-brand').css('font-size', '30px');
     }
 });
 
+// 숙제 2. 회원약관 박스 거의 끝까지 스크롤 하면 alert띄우기
+$('.lorem').on('scroll', function() {
+    var 스크롤양 = document.querySelector('.lorem').scrollTop;
+    var 실제높이 = document.querySelector('.lorem').scrollHeight;
+    var 높이 = document.querySelector('.lorem').clientHeight;
 
+    if (스크롤양 + 높이 > 실제높이 - 10) {
+        alert('다읽음.')
+    }
+});
+
+//스크롤 다룰 때 주의점
+
+//스크롤 이벤트 리스너 안의 코드는 1초에 60번 이상 실행됨
+// 많이 쓰면 성능저하 생기니까 스크롤바 1개마다 1개만 사용.
+
+//스크롤이벤트리스너 안의 코드는 1초에 여러번 실행되다 보니 바닥체크하는 코드도 여러번 실행될 수 있음.
+//숙제 2에서 alert가 2번 뜨고 그럴 수 있음
+//그걸 방지하고 싶으면 구글에 검색 ㄱㄱ 변수같은거 사용하면 될것임.
+
+
+// 현재 페이지를 끝까지 스크롤했는지 체크하려면
+
+document.querySelector('html').scrollTop;  //현재 웹페이지 스크롤양
+document.querySelector('html').scrollHeight; //현재 웹페이지 실제높이
+document.querySelector('html').clientHeight; //현재 웹페이지 보이는 높이임
+//이거 쓰면 됨
+
+//(주의)
+//1. 웹페이지 scrollHeight 구할 땐 브라우저마다 아주 약간의 오차가있을 수 있어서 테스트해보는게 좋습니다.
+//2. 웹페이지 scrollHeight 구하는 코드는 페이지 로드가 완료되고나서 실행해야 정확합니다. 그래서 <body> 끝나기 전에 적는게 좋습니다.
+
+
+
+//모달창에서 검은 배경 눌렀을 때 모달창 닫히게
+// document.querySelector('.black-bg').addEventListener('click', function(){
+//     document.querySelector('.black-bg').classList.remove('show-modal');
+//   })
+// 근데 이렇게 하면 검은 배경 뿐만 아니라 흰배경, input, 글자 등 모달창 내부의 어떤걸 눌러도 다 닫힘
+
+/*
+이벤트 버블링
+
+어떤 HTML 태그에 이벤트가 발생하면 그의 모든 상위요소까지 이벤트가 실행되는 현상을 이벤트 버블링이라고 합니다. 
+
+click이라는 이벤트로 예를 들어보면,
+
+HTML 태그에 클릭이 발생하면 그의 모든 상위요소까지 자동으로 클릭된다는 말입니다. 
+
+<div>
+  <div>
+    <p>안녕</p>
+  </div>
+</div>
+여기서 안녕을 누르면 p div div 이렇게 총 3번 누르는 것임
+*/
+
+/*
+이벤트리스너 안에서 쓰는 이벤트 함수들
+
+document.querySelector('.black-bg').addEventListener('click', function(e){
+  e.target;
+  e.currentTarget;
+  e.preventDefault();
+  e.stopPropagation();
+})
+이벤트리스너의 콜백함수에 파라미터 아무거나 추가하면
+이벤트관련 유용한 함수들을 사용가능함
+파라미터 이름은 아무렇게나 작명하면 됨. 보통 대충 e라고 함
+
+e.target은 실제 클릭한 요소 알려줌 (이벤트 발생한 곳)
+e.currentTarget은 지금 이벤트리스너가 달린 곳 알려줌 (참고로 this라고 써도 똑같음)
+e.preventDefault() 실행하면 이벤트 기본 동작을 막아줌
+e.stopPropagation() 실행하면 내 상위요소로의 이벤트 버블링을 중단해줌
+
+*/
+
+document.querySelector('.black-bg').addEventListener('click', function(e) {
+    if (e.target == document.querySelector('.black-bg')) {
+        document.querySelector('.black-bg').classList.remove('show-modal');
+    }
+    
+})
