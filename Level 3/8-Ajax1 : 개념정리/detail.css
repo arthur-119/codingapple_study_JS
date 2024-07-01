@@ -39,3 +39,16 @@
  .show {
      display: block;
  }
+
+.container {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.btn-hide {
+    display: none;
+}
