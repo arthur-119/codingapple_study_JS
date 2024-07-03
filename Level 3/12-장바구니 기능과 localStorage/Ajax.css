@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.top-buttons {
+    display: flex;
+    justify-content:flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin: 50px 30px 50px 0px;
+}
+
+.btn-hide {
+    display: none;
+}
+
+/* .row {
+    display: flex;
+    text-align: end;
+} */
+
+
+
+#buy {
+    /* text-align: end; */
+    width: 100%;
+    margin: 0 0 30px;
+}

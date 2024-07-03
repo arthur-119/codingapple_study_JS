@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+<body>
+    <div class="container">
+        <h1>장바구니</h1>
+        <div class="cart"></div>
+    </div>
+
+
+
+    <!-- jQuery 설치 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        var item = JSON.parse(localStorage.getItem('cart'));
+        console.log(item)
+
+        item.forEach(function(a, b) {
+            console.log(a)
+            var template = `
+            <p>${a}</p>
+            `
+            $('.cart').append(template)
+        })
+    </script>
+
+
+
+
+
+</body>
+</html>
