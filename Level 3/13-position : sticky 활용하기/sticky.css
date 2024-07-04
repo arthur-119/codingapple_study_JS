@@ -1,0 +1,32 @@
+body {
+ background: grey;
+ height: 3000px; 
+}
+
+.grey {
+    background: lightgrey;
+    height: 2000px;
+    margin-top: 500px;
+}
+
+.image img {
+    width: 100%;
+}
+
+.image {
+    float: right;
+    width: 400px;
+    position: sticky;
+    top: 100px;
+}
+
+.text {
+    float: left;
+    width: 300px;
+    clear: both;
+}
+
+.text:nth-child(n+3) {
+    margin-top: 300px;
+    color: yellow;
+}
